@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+<div th:remove="tag" th:fragment="footer">
+
+    <!-- jQuery -->
+    <script src="resources/lib/js/jquery-2.1.1.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="resources/lib/js/bootstrap.min.js"></script>
+<script src="resources/app/js/common.js"></script>
+<script src="resources/lib/js/style/animsition.js"></script>
+ <script src="resources/app/js/WHMnot.js"></script>
+<script>
+$(document).ready(function() {
+	  $(".animsition").animsition({
+	    inClass: 'fade-in',
+	    outClass: 'fade-out-right-lg',
+	    inDuration: 600,
+	    outDuration: 600,
+	   
+	    loading: true,
+	    loadingParentElement: 'body', //animsition wrapper element
+	    loadingClass: 'animsition-loading',
+	    loadingInner: '', // e.g '<img src="loading.svg" />'
+	    timeout: false,
+	    timeoutCountdown: 5000,
+	    onLoadEvent: true,
+	    browser: [ 'animation-duration', '-webkit-animation-duration'],
+	    // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+	    // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+	    overlay : false,
+	    overlayClass : 'animsition-overlay-slide',
+	    overlayParentElement : 'body',
+	  });
+	});
+
+
+
+
+
+
+</script>
+</div>
+</body>
+</html>

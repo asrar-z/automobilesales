@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<title>Update</title>
+<ct th:replace="WHMtemplates/fragments/WMHeader :: commonhead"></ct>
+
+
+<link href="resources/lib/css/panels.css" rel="stylesheet" />
+<style>
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  background: red;
+  cursor: inherit;
+  display: block;
+}
+input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+}
+
+</style>
+
+
+</head>
+
+<body>
+
+    <div id="wrapper" >
+    <div th:replace="WHMtemplates/fragments/WMHeader :: header"></div>
+
+        
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                           Update details
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  Dashboard
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-edit"></i> Update details
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row  -->
+                
+                <div class="panel with-nav-tabs panel-default">
+                <div class="panel-heading">
+                <label >Select Outlet</label> 
+				<select	id="office"	class="animsition form-control select-box-inline office-selects">
+				</select>
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tab1default" data-toggle="tab">Update Manufacturer Details</a></li>
+                            <li><a href="#tab2default" data-toggle="tab">Update Vehicle Details</a></li>
+                        </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="tab1default">
+                        
+	
+          <form id="make-form"  enctype="multipart/form-data" class="animsition">
+					
+					<div class="form-group">
+					<label>Select Manufacturer</label>
+					<select	id="make" name="makeid" class="form-control select-box-inline make-selects">
+					<option selected="selected" value="0" >Select Make</option>
+					</select>
+					</div>			
+					<div id="hide1">
+						<div class="form-group">
+							<label for="make-name" >Update Name</label> 
+							<input	name="name" type="text" class="form-control" id="make-name"
+								 />
+						</div>
+						<div class="form-group">
+    						 <label>Update logo</label>
+				            	<div class="input-group">
+				               	 <span class="input-group-btn" >
+				                    	<span class="btn btn-primary btn-file">
+				                       	 Browse&hellip; <input name="file" type="file" />
+				                    </span>
+				                </span>
+				                <input type="text" class="form-control" readonly="readonly" />
+				            </div>
+				        </div>
+				        <div class="from-group">
+				        
+				  <button id="upload" class="btn btn-primary" type="submit">Add</button>
+				    </div>    
+				        </div>
+
+		</form>  
+		 <div id="success" class="alert-success"></div>
+            </div>            
+                        
+                        
+                        
+                        
+                        
+                        <div class="tab-pane fade" id="tab2default">
+                        
+                    <div class="form-group">
+					<label>Select Manufacturer</label>
+					<select	id="make2" name="makeid" class="form-control select-box-inline make-selects">
+					<option selected="selected" value="0" >Select Make</option>
+					</select>
+					</div>	
+                    <div class="form-group">
+					<label>Model</label>
+					<select	id="model"	class="form-control select-box-inline vehicle-selects">
+					<option selected="selected" value="0" >Select Vehicle</option>
+					</select>
+					</div>
+					<div id="hide2">
+                    <form id="vehicle-form"  enctype="multipart/form-data" class="animsition">
+					<div class="form-group hidden">
+					<input name="office" type="number" class="form-control" id="office-fid" />
+					</div>
+					<div class="form-group">
+					<label for="vehicle-name" >Enter the new model name</label> 
+					<input name="name2" type="text" class="form-control" id="vehicle-name" placeholder="Vehicle Title" />
+					</div>
+					<div class="form-group">
+					<label for="vehicle-id" >Enter the new model ID</label> 
+					<input name="vid" type="text" class="form-control" id="vehicle-id" placeholder="Vehicle ID" />
+					</div>
+					<div class="form-group">
+					<label for="vehicle-cc" >Enter Engine Displacement CC</label> 
+					<input name="cc" type="text" class="form-control" id="vehicle-cc" placeholder="Vehicle CC" />
+					</div>
+					<div class="form-group">
+					<label for="vehicle-torque" >Enter the Torque</label> 
+					<input name="torque" type="text" class="form-control" id="vehicle-torque" placeholder="Vehicle Torque" />
+					</div>
+					<div class="form-group">
+					<label for="vehicle-speed" >Enter the Top Speed</label> 
+					<input name="speed" type="text" class="form-control" id="vehicle-speed" placeholder="Vehicle Speed" />
+					</div>
+					<div class="form-group">
+					<label for="vehicle-cost" >Enter the Cost</label> 
+					<input name="cost" type="text" class="form-control" id="vehicle-cost" placeholder="Vehicle Cost" />
+					</div>
+					<div class="form-group">
+					<label for="vehicle-bp" >Enter the Base Price</label> 
+					<input name="bp" type="text" class="form-control" id="vehicle-bp" placeholder="Vehicle Base Price" />
+					</div>	
+					<div class="form-group">
+					<label for="vehicle-quantity" >Enter Quantity ordered</label> 
+					<input name="quantity" type="number" class="form-control" id="vehicle-quantity" placeholder="Vehicle Quantity" />
+					</div>
+					<div class="form-group">
+    						 <label>Image</label>
+				            	<div class="input-group">
+				               	 <span class="input-group-btn" >
+				                    	<span class="btn btn-primary btn-file">
+				                       	 Browse&hellip; <input id="file" name="file" type="file" />
+				                    </span>
+				                </span>
+				                <input type="text" class="form-control" readonly="readonly" />
+				            </div>
+				    </div>
+					<div class="form-group hidden">
+					<label for="makeid" >Enter Quantity ordered</label> 
+					<input name="makeid" type="number" class="form-control" id="makeid" />
+					</div>
+					<div class="form-group hidden">
+					<label for="oldid" >Enter Quantity ordered</label> 
+					<input name="oldid" type="text" class="form-control" id="oldid" />
+					</div>
+
+				    <div class="from-group">
+				        
+				     <button id="upload2" class="btn btn-primary" type="submit">Add</button>
+				        
+				    </div>
+			</form>  
+                </div>        
+                        
+                        
+                        <div id="success2" class="alert-success"></div>
+                        
+                        
+                        </div>
+
+                    </div>
+                </div>
+               
+            </div>
+                
+			</div>
+
+
+
+
+        
+        </div>
+                
+                <!-- /.row  -->
+		
+        
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    
+    <!-- /#wrapper -->
+	<div th:replace="WHMtemplates/fragments/Footer :: footer"></div>
+    <script src="resources/app/js/WHMupdate.js"></script>
+    
+
+    
+</body>
+
+</html>

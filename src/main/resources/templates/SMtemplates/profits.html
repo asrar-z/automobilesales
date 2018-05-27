@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<title>Sales Insight</title>
+<ct th:replace="SMtemplates/fragments/SMHeader :: commonhead"></ct>
+</head>
+
+<body>
+
+    <div id="wrapper" >
+    <div th:replace="SMtemplates/fragments/SMHeader :: header"></div>
+
+        
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            EMI Profits
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  Dashboard
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-edit"></i> See how the app makes you profit
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row  -->
+                		<div class="row">
+				<div class="col-lg-12 ">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i>EMI Profits</h3>
+                            </div>
+                            <div class="panel-body">
+                    <div class="form-group">
+					<label>Select Office</label>
+					<select	id="office"	class="animsition form-control select-box-inline office-selects">
+					<option selected="selected" value="0" >Select Office</option>
+					</select>
+					</div>
+               <div class="col-lg-12 col-sm-12">
+				<table id="profit-table" class="animsition table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th>Sale ID</th>
+							<th>Office</th>
+							<th>Year</th>
+							<th>Profit</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+                               
+                            </div>
+                        </div>
+                    </div>
+			</div>
+                <!-- /.row  -->
+  
+
+			
+            </div></div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+
+    <!-- /#wrapper -->
+	<div th:replace="SMtemplates/fragments/Footer :: footer"></div>
+	<script src="resources/app/js/SMprofits.js"></script>
+	<script src="resources/lib/js/money.jquery.js"></script>
+</body>
+
+</html>

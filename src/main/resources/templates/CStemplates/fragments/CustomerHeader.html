@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:remove="tag" th:fragment="commonhead">
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Bootstrap Core CSS -->
+    <link href="resources/lib/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="resources/lib/css/datatables.min.css" rel="stylesheet" />
+    <link href="resources/lib/css/select2.min.css" rel="stylesheet" />
+     <link href="resources/lib/css/select2-bootstrap.min.css" rel="stylesheet" />
+     <link rel="stylesheet" href="resources/lib/css/style/animsition.css" />
+    <!-- Custom CSS -->
+    <link href="resources/lib/css/sb-admin.css" rel="stylesheet" />
+	<link href="resources/lib/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+
+
+    <!-- Custom Fonts -->
+    <link href="resources/lib/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="resources/lib/font-awesome/css/font-awesome-animation.css" rel="stylesheet" type="text/css" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+
+        <!-- Navigation -->
+        <nav th:fragment="header" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="resources/lib/img/zlogo.png" height="50px"></img>
+                              	 <span style="font-family: Impact, Charcoal, sans-serif; color:#18bc9c; font-size:large" > Welcome:&nbsp;</span>
+                    <span sec:authentication="name" style="font-family: Impact, Charcoal, sans-serif; color:white; font-size:x-large " > </span>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                  <li >
+                    <a href="./logout" ><i class="fa fa-power-off"></i> Log out </a> 
+                 </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul id="nav-bar" class="nav navbar-nav side-nav">
+                    <li id="a_1" class="active" >
+                        <a href="./models" ><i class="fa fa-fw fa-car"></i>  Models</a>
+                    </li>
+                     <li id="a_2" >
+                        <a href="javascript:;"  data-toggle="collapse" data-target="#appointments"><i class="fa fa-fw fa-calendar"></i>  Schedule Appointment <i class="fa fa-fw fa-caret-down"></i></a>
+                        
+                        <ul id="appointments" class="collapse">
+                            <li>
+                                <a href="./schedule" > Buy a new automobile</a>
+                            </li>
+                            <li>
+                                <a href="./service" > Book a service</a>
+                            </li>
+                        </ul>
+                      
+                    </li>
+                     <li id="a_3">
+                        <a href="./trackservice" ><i class="fa fa-fw fa-wrench"></i>  Track Service</a>
+                    </li>
+                    <li id="a_4">
+                        <a href="./trackemi" ><i class="fa fa-fw fa-reorder"></i>  Track EMI</a>
+                    </li>
+                    <li id="a_5">
+                        <a href="./appointmenthistory" ><i class="fa fa-fw fa-history"></i>  Order History</a>
+                    </li>
+                    <li id="a_6">
+                        <a href="./feedback"  class="faa-parent animated-hover"><i class="fa fa-fw fa-comment-o faa-horizontal"></i>  Give us a feedback</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+
+
+</body>
+
+</html>

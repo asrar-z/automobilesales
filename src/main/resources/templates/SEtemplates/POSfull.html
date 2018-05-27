@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<title>New Sale</title>
+<ct th:replace="SEtemplates/fragments/SEHeader :: commonhead"></ct>
+</head>
+
+<body>
+
+    <div id="wrapper" >
+    <div th:replace="SEtemplates/fragments/SEHeader :: header"></div>
+
+        
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid  animsition">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Full Payment sale
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i> Dashboard
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-edit"></i> New sale
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row  -->
+                <div class="row">
+
+			<form role="form" id="emi" class='col-lg-6'>
+			<div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Customer Details</h3>
+                            </div>
+                            <div class="panel-body">
+					<div class="form-group">
+					<label>Customer First Name:</label>
+					<input type="text" class="form-control" id="firstName"/>
+					</div>
+					<div class="form-group">
+					<label>Customer Last Name:</label>
+					<input type="text" class="form-control" id="lastName"/>
+					</div>
+											
+ 				<div class="form-group">
+                <label >Select Office</label> 
+				<select	id="office"	class="form-control select-box-inline office-selects">
+					<option selected="selected" value="0" >Select Office for Tax rate</option>
+				</select>
+				</div>
+					<div class="form-group">
+					<span>Make</span>
+					<select	id="make"	class="form-control select-box-inline make-selects">
+					<option selected="selected" value="0" >Select Make</option>
+					</select>
+					</div>
+					
+					<div class="form-group">
+					<span>Model</span>
+					<select	id="model"	class="form-control select-box-inline vehicle-selects">
+					<option selected="selected" value="0" >Select Vehicle</option>
+					</select>
+					</div>
+
+					<div class="form-group">
+					<label>Base Price:</label>
+					<input type="text" class="form-control" id="base" disabled="disabled"/>
+					</div>			
+
+						<div class="form-group">
+					<label>Tax rate:</label>
+					<input type="text" class="form-control" id="tax" disabled="disabled"/>
+					</div>
+					
+					<div class="form-group">
+					<label>Total Payment:</label>
+					<input type="text" class="form-control" id="down" disabled="disabled"/>
+					</div>
+					
+					<button id="salebutton" type="button" class="btn btn-info">Record Sale</button>
+					</div>
+					<br></br>
+					<div id="successmsg" class="alert alert-success ">
+                    <strong>Sale Recorded!</strong> 
+                </div>
+					</div>
+			</form>
+					<div id="imgdiv" class="col-lg-6">
+					<img id="vimg"></img>
+					</div>
+			</div>
+                <!-- /.row  -->
+				
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+	<div th:replace="SEtemplates/fragments/Footer :: footer"></div>
+<script src="resources/app/js/SEfull.js"></script>
+</body>
+
+</html>

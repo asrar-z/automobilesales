@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<title>Inventory</title>
+<ct th:replace="WHMtemplates/fragments/WMHeader :: commonhead"></ct>
+</head>
+
+<body>
+
+    <div id="wrapper" >
+    <div th:replace="WHMtemplates/fragments/WMHeader :: header"></div>
+
+        
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid animsition">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                           Preview what customers see
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i> Dashboard
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-edit"></i> Model browser
+                            </li>
+                        </ol>
+                    </div>
+                    
+                <div class="col-lg-12 alert alert-info alert-dismissable">
+               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+               <i class="fa fa-info-circle"></i>  <strong>Note </strong>Customers won't see no.of items sold and quantity remaining column! If quantity is zero the vehicle will not be displayed to customers.
+                 </div>
+                </div>
+                
+                
+                
+                <!-- /.row  -->
+                
+                <!-- /.row  -->
+              <div class="row">
+				<div class="col-lg-12">
+<div class="panel panel-default">
+ <div class="panel-heading"><h3>Available Models</h3></div>
+<div class="panel-body">
+<label >Select Outlet</label> 
+				<select	id="office"	class="animsition form-control select-box-inline office-selects">
+				</select>
+<table id="outer" class="table table-condensed" style="border-collapse:collapse;">
+
+    <tbody>
+
+    </tbody>
+</table>
+            </div>
+        
+          </div> 
+        
+      </div>
+				
+				
+				
+				</div>
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+	<div th:replace="WHMtemplates/fragments/Footer :: footer"></div>
+	<script src="resources/app/js/model3.js"></script>
+
+</body>
+
+</html>

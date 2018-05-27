@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<title>Market Performance</title>
+<ct th:replace="BIAtemplates/fragments/BIAHeader :: commonhead"></ct>
+</head>
+
+<body>
+
+    <div id="wrapper" >
+    <div th:replace="BIAtemplates/fragments/BIAHeader :: header"></div>
+
+        
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            See Vehicle's Market Performance
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  Dashboard
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-edit"></i> Search for vehicle
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row  -->
+                
+                <!-- /.row  -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">See a Vehicle's Market Perfromance</h3>
+                            </div>
+                            <div class="panel-body">
+                  <label>Select Outlet</label>
+					<select	id="office"	class="form-control select-box-inline office-selects">
+					</select>
+					
+					<label>Select the year</label>
+					<select	id="year" class="form-control select-box-inline">
+					</select>
+					<label>Select Manufacturer</label>
+					<select	id="make"	class="form-control select-box-inline make-selects">
+					<option selected="selected" value="0" >Select Make</option>
+					</select>
+					<label>Model</label>
+					<select	id="model"	class="form-control select-box-inline vehicle-selects">
+					<option selected="selected" value="0" >Select Vehicle</option>
+					</select>
+					
+					
+					<div class="animsition" id="hide">
+					 <div class="col-lg-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Vehicle Sales </h3>
+                            </div>
+                            <div class="panel-body">
+                                <div id="morris-line-chart"></div>
+
+                            </div>
+                        </div>
+                    </div>
+					</div>
+					<div class=" col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i>Income Statement</h3>
+                            </div>
+                            <div id="statement" class="panel-body">
+                                <table class=" animsition table table-bordered table-hover">
+                                <tbody>
+                                <tr>
+                                	<td>Total Revenue</td>
+                                	<td id="revenue"></td>
+                                </tr>
+                                <tr>
+                                	<td>Total Investment</td>
+                                	<td id="investment" style="border-bottom:2px solid black"></td>
+                                </tr>
+                                <tr>
+                                	<td>Gross Profit</td>
+                                	<td id="grossprofit"></td>
+                                </tr>
+                               
+                                <tr>
+                                	<td>Tax </td>
+                                	<td id="tax"  style="border-bottom:2px solid black"></td>
+                                </tr>
+                                <tr  style="border-bottom:2px solid black">
+                                	<td>Net Profit </td>
+                                	<td id="netprofit"></td>
+                                </tr>
+                                
+                                <tr>
+                                	<td>Profit Margin</td>
+                                	<td id="margin"></td>
+                                </tr>
+                                </tbody>
+                                
+                                </table>
+
+                            </div>
+                        </div>					
+					
+					
+					
+					
+					</div>
+					
+					</div>
+					</div>
+        
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+	<div th:replace="BIAtemplates/fragments/Footer :: footer"></div>
+	    <script> switchActiveTab('a_2');</script>
+	 <script src="resources/app/js/line.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<title>New Sale</title>
+<ct th:replace="SEtemplates/fragments/SEHeader :: commonhead"></ct>
+
+</head>
+
+<body>
+
+    <div id="wrapper" >
+    <div th:replace="SEtemplates/fragments/SEHeader :: header"></div>
+
+        
+
+        <div id="page-wrapper">
+
+           
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            EMI sale
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i> Dashboard
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-edit"></i> New EMI sale
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row  -->
+  <div class="row">
+			<div class="col-lg-12 col-sm-12 table-buttons">
+				<!-- Buttons -->
+				<button type="button" class="btn btn-default btn-md"
+					data-toggle="modal" data-target="#user-add-modal">
+					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+					<span >Add</span>
+				</button>
+</div>
+
+</div>
+		
+	<div class="progress">
+     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="5" style="width: 20%;">
+       Step 1 of 4
+     </div>
+   </div>
+  
+   <div class="navbar">
+      <div class="navbar-inner">
+            <ul class="nav nav-pills">
+               <li class="active"><a href="#step1" data-toggle="tab" data-step="1">Customer Details</a></li>
+               <li><a href="#step2" data-toggle="tab" data-step="2">Vehicle Details</a></li>
+               <li><a href="#step3" data-toggle="tab" data-step="3">EMI Plan</a></li>
+               <li><a href="#step4" data-toggle="tab" data-step="4">Record Sale</a></li>
+               
+            </ul>
+      </div>
+   </div>
+   <div class="tab-content calculator-amortization">
+      <div class="tab-pane fade in active" id="step1">
+         
+        <div class="animsition "> 
+			<form role="form" id="cus" class='col-lg-6'>
+				<div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Customer Details</h3>
+                            </div>
+                            <div class="panel-body">
+                    <div class="form-group">
+					<label>Customer ID:</label>
+					<input type="text" class="form-control" id="customerid"/>
+					</div>
+					<div class="form-group">
+					<label>Customer First Name:</label>
+					<input type="text" class="form-control" id="firstName" disabled="disabled"/>
+					</div>
+					<div class="form-group">
+					<label>Customer Last Name:</label>
+					<input type="text" class="form-control" id="lastName" disabled="disabled"/>
+					</div>
+					<div class="form-group">
+					<label>Customer Email:</label>
+					<input type="text" class="form-control" id="email" disabled="disabled"/>
+					</div>
+				   <div class="form-group">
+					<button id ="fetch" type="button" class="btn btn-primary">Fetch Customer Details</button>
+					 <a class="btn btn-default next" href="#">next</a>
+					</div>
+					    </div>
+                        </div>
+                        </form>
+            
+        </div>
+
+        
+      </div>
+      <div class="tab-pane fade" id="step2">
+         <div class="animsition "> 
+          
+                
+                  
+                        <form  role="form" id="vehicle" class='col-lg-6'>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Vehcile Details</h3>
+                                  
+                            </div>
+                            <div class="panel-body">
+                   			<div class="form-group">
+                <label >Select Office</label> 
+				<select	id="office"	class="form-control select-box-inline office-selects">
+					<option selected="selected" value="0" >Select Office for Tax rate and Currency</option>
+				</select>
+				 <input type="checkbox" id="bulk">Bulk Order</input>
+				</div>        
+                            
+					<div class="form-group">
+					<label>Make</label>
+					<select	id="make"	class="form-control select-box-inline make-selects">
+					<option selected="selected" value="0" >Select Make</option>
+					</select>
+					</div>
+					<div class="form-group">
+					<label>Model</label>
+					<select	id="model"	class="form-control select-box-inline vehicle-selects">
+					<option selected="selected" value="0" >Select Vehicle</option>
+					</select>
+					</div>
+					<div id="q" class="hidden form-group">
+					<label>Quantity</label>
+					<input	id="quantity"	type="number" class="form-control " value="1">	</input>				
+					</div>
+					<div id="imgdiv" class="form-group">
+					<img id="vimg"></img>
+					</div>
+	
+					<div class="form-group">
+					<label>Base Price:</label>
+					<input type="text" class="form-control" id="base" disabled="disabled"/>
+					   <a class="btn btn-default next" href="#">next</a>
+					</div>		
+					  </div>
+                        </div>
+                        </form>
+          
+         </div>
+        
+      </div>
+      <div class="tab-pane fade" id="step3">
+        <div class=" animsition "> 
+                                <form class='col-lg-12'>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Sales Details</h3>
+                            </div>
+                            <div class="panel-body">
+
+					<div class="form-group">
+					<label>Tax rate:</label>
+					<input type="text" class="form-control" id="tax" disabled="disabled"/>
+					</div>
+					
+					<div class="form-group">
+					<label>Down Payment:</label>
+					<input type="text" class="form-control" id="down" />
+					</div>
+										
+					<div class="form-group">
+					<label>Total EMI Loan Amount:</label>
+					<input type="text" class="amount form-control" id="loan" disabled="disabled"/>
+					</div>
+
+
+
+
+					<div class="form-group" >
+					<label>Rate (APR):</label>
+					<input id="rate" type="text" class="rate form-control" value="7%" />
+					</div>
+
+
+
+
+					<div class="form-group">
+					<label>Term:</label>
+					<input id="duration" type="text" class="term form-control" value="36m" />
+					<a class="btn btn-default next" href="#">next</a>
+					</div>
+					</div>
+					</div>
+					</form>
+					
+			
+			
+			
+			
+			</div>
+			
+	 </div>
+                       
+	 
+      
+      <div class="  tab-pane fade" id="step4">
+        <div class="animsition ">
+					<button type="button" class="btn btn-primary">Calculate Installments</button>
+	    			<button id="salebutton" type="button" class="btn btn-primary">Record Sale</button>	
+			
+			<div id="successmsg" class="alert alert-success ">
+                    <strong>Sale Recorded!</strong> 
+                </div>
+                			<div class="row col-lg-12">
+			
+					<h2>Monthly Installments Preview</h2>
+					<div class="animsition table-responsive">
+					<div class="results ">
+
+					<table id="res_table" class="table table-bordered table-hover table-striped accrue-amortization ">
+					<tbody>
+					<tr>
+					<th class="accrue-payment-number">#</th>
+					<th class="accrue-payment-amount">Payment Amt.</th>
+					<th class="accrue-total-interest">Total Interest</th>
+					<th class="accrue-total-payments">Total Payments</th>
+					<th class="accrue-balance">Balance</th>
+					</tr>
+					</tbody>
+					</table>
+					</div>
+					</div>
+				</div>
+      </div>
+
+   </div>			
+       </div>                        
+                        
+
+
+		
+</div>
+
+		</div>
+
+      <div class="modal fade" id="user-add-modal" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel" data-mode="add">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="fales">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Add new customer</h4>
+				</div>
+				<div class="modal-body">
+					<form id="user-form">
+						<div class="form-group">
+							<label for="id">Login ID</label> <input name="userid" type="text"
+								class="form-control" id="userid" placeholder="Login ID" />
+						</div>
+
+						<div class="form-group">
+							<label for="first-name">First Name</label> <input
+								name="firstName" type="text" class="form-control"
+								id="first-name" placeholder="First Name" />
+						</div>
+
+						<div class="form-group">
+							<label for="first-name">Last Name</label> <input name="lastName"
+								type="text" class="form-control" id="last-name"
+								placeholder="Last Name" />
+						</div>
+
+						<div class="form-group">
+							<label for="email">Email</label> <input name="email" type="text"
+								class="form-control" id="email" placeholder="Email" />
+						</div>
+
+
+						<div class="form-group">
+							<label for="password">Password</label> <input name="password"
+								type="password" class="form-control" id="password"
+								placeholder="Password" />
+						</div>
+							<div class="form-group">
+							<input name="roles"	type="text" class="form-control hidden" id="roles"
+								value="CUSTOMER"/>
+						</div>
+
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Existing customer</button>
+					<button id="user-add-button" type="button"
+						class="btn btn-primary">Save</button>
+				</div>
+			</div>
+
+            <!-- /.container-fluid -->
+	
+      </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+	<div th:replace="SEtemplates/fragments/Footer :: footer"></div>
+	
+<script src="resources/app/js/jquery.accrue.js"></script>
+<script src="resources/lib/js/jquery.autocomplete.js"></script>
+
+<script src="resources/app/js/SEposemi.js"></script>
+<script src="resources/lib/js/money.jquery.js"></script>
+
+<script>
+$('.next').click(function(){
+
+	  var nextId = $(this).parents('.tab-pane').next().attr("id");
+	  $('[href=#'+nextId+']').tab('show');
+	  return false;
+	  
+	})
+
+	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+	  
+	  //update progress
+	  var step = $(e.target).data('step');
+	  var percent = (parseInt(step) / 4) * 100;
+	  
+	  $('.progress-bar').css({width: percent + '%'});
+	  $('.progress-bar').text("Step " + step + " of 4");
+	  
+	  //e.relatedTarget // previous tab
+	  
+	})
+
+	$('.first').click(function(){
+
+	  $('#myWizard a:first').tab('show')
+
+	})
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<title>Sales Insight</title>
+<ct th:replace="BIAtemplates/fragments/BIAHeader :: commonhead"></ct>
+<link rel="stylesheet" href="resources/app/css/animate.css" />
+
+</head>
+
+<body>
+
+    <div id="wrapper" >
+    <div th:replace="BIAtemplates/fragments/BIAHeader :: header"></div>
+
+        
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                           Competitor's rate
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  Dashboard
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-edit"></i>Live market price of vehicles
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row  -->
+            <div class="row">
+            	<div class="col-lg-12 ">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Price Comparison</h3>
+                            </div>
+                            <div class="panel-body">
+             <div class="form-group">
+             <label>Select Outlet</label>
+					<select	id="office"	class="form-control select-box-inline office-selects">
+					</select>
+					<label>Select Manufacturer</label>
+					<select	id="make"	class=" form-control select-box-inline make-selects">
+					<option selected="selected" value="0">Select a make</option>
+					</select>
+					<span id="logo"></span>
+				</div>
+				<table id="hide" class="animsition col-lg-12 table table-responsive table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Model</th>
+                                        <th>Your rate</th>
+                                        <th>Live market rates</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="live" >
+                              
+                                </tbody>
+                            </table>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">See a Vehicle's Market Perfromance</h3>
+                            </div>
+                            <div class="panel-body">
+                 
+					<label>Select the year</label>
+					<select id="year" class="form-control select-box-inline">
+					</select>		
+			<label>Model</label>
+					<select id="model" class="form-control select-box-inline vehicle-selects">
+					<option selected="selected" value="0">Select Vehicle</option>
+					</select>
+					
+					
+					<div>
+					 <div class="col-lg-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Vehicle Sales </h3>
+                            </div>
+                            <div class="panel-body">
+                                <div id="morris-line-chart"></div>
+
+                            </div>
+                        </div>
+                    </div>
+					</div>
+					<div class=" col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i>Income Statement</h3>
+                            </div>
+                            <div id="statement" class="panel-body">
+                                <table class="animsition table table-bordered table-hover" style="animation-duration: 600ms; opacity: 1;">
+                                <tbody>
+                                <tr>
+                                	<td>Total Revenue</td>
+                                	<td id="revenue"></td>
+                                </tr>
+                                <tr>
+                                	<td>Total Investment</td>
+                                	<td id="investment" style="border-bottom:2px solid black"></td>
+                                </tr>
+                                <tr>
+                                	<td>Gross Profit</td>
+                                	<td id="grossprofit"></td>
+                                </tr>
+                               
+                                <tr>
+                                	<td>Tax </td>
+                                	<td id="tax" style="border-bottom:2px solid black"></td>
+                                </tr>
+                                <tr style="border-bottom:2px solid black">
+                                	<td>Net Profit </td>
+                                	<td id="netprofit"></td>
+                                </tr>
+                                
+                                <tr>
+                                	<td>Profit Margin</td>
+                                	<td id="margin"></td>
+                                </tr>
+                                </tbody>
+                                
+                                </table>
+
+                            </div>
+                        </div>					
+					
+					
+					
+					
+					</div>
+					
+					</div>
+					</div>
+                <!-- /.row  -->
+  
+
+			
+            </div></div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+
+    <!-- /#wrapper -->
+	<div th:replace="BIAtemplates/fragments/Footer :: footer"></div>
+	<script src="resources/app/js/BIAliverates.js"></script>
+</body>
+</html>

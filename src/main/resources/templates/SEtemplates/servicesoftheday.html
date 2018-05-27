@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<title>Services</title>
+<ct th:replace="SEtemplates/fragments/SEHeader :: commonhead"></ct>
+<link href="resources/app/css/todayappointments.css" rel="stylesheet" />
+</head>
+
+<body >
+
+    <div id="wrapper" >
+    <div th:replace="SEtemplates/fragments/SEHeader :: header"></div>
+
+        
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid animsition ">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Today's Services
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  Dashboard
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-edit"></i> Appointments
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row  -->
+                
+                <!-- /.row  -->
+                <div class="col-lg-6" id="map_canvas" style="height:500px; width:800px; border:3px solid #18bc9c;">
+                
+                </div>
+                <div class="col-lg-6">
+           <div class="panel panel-default ">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Services</h3>
+                            </div>
+                            <div class="panel-body">
+
+    <ul class=" timeline todayslist">
+        
+    </ul>
+
+
+</div></div>
+</div>
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+	<div th:replace="SEtemplates/fragments/Footer :: footer"></div>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&amp;sensor=false"></script>
+	<script src="resources/app/js/SREtoday.js"></script>
+</body>
+
+</html>
